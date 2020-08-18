@@ -1,5 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
+import { GlobalStyle } from './utils';
+import { PrimaryButton } from './atoms/Buttons';
 
 function App() {
 	return (
@@ -18,6 +20,8 @@ function App() {
 					Learn React
 				</a>
 			</header>
+			<PrimaryButton>Hello</PrimaryButton>
+			<GlobalStyle />
 		</div>
 	);
 }
