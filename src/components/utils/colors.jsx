@@ -14,3 +14,7 @@ export const grey = {
 export const white = {
 	100: '#ffffff',
 };
+
+export const blue = {
+	100: '#67dcf9',
+};

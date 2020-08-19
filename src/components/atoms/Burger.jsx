@@ -1,14 +1,19 @@
 import React from 'react';
+import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 import { defaultTheme } from '../utils';
 
 const Burger = ({ open, setOpen }) => {
+	const disable = useMediaQuery({ query: '(min-device-width: 1023px)' });
 	return (
-		<Wrapper open={open} onClick={() => setOpen(!open)}>
-			<div />
-			<div />
-			<div />
-		</Wrapper>
+		<>
+			<Wrapper open={open} onClick={() => setOpen(!open)}>
+				<div />
+				<div />
+				<div />
+			</Wrapper>
+			{disable && setOpen(false)}
+		</>
 	);
 };
 
@@ -16,8 +21,8 @@ const Wrapper = styled.button`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 	padding: 0;
 	background: transparent;
 	border: none;
@@ -32,8 +37,8 @@ const Wrapper = styled.button`
 	}
 
 	div {
-		width: 60px;
-		height: 10px;
+		width: 40px;
+		height: 5px;
 		position: relative;
 		transform-origin: 1px;
 		background: ${defaultTheme.primaryColorhover};

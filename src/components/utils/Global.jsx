@@ -6,11 +6,11 @@ export const GlobalStyle = createGlobalStyle`
     ${normalize()}
     html {
         font-size: 16px;
-        box-sizing: border-box;
+        /* box-sizing: border-box; */
     }
 
     *, *:before, *:after {
-        box-sizing: inherit;
+        /* box-sizing: inherit; */
     }
 
     body{
