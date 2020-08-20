@@ -51,7 +51,7 @@ const Wrapper = styled.button`
 
 		:nth-child(2) {
 			transform: ${({ open }) =>
-				open ? 'translateX(60px)' : 'translateX(0)'};
+				open ? 'translateX(-60px)' : 'translateX(0)'};
 			opacity: ${({ open }) => (open ? '0' : '1')};
 		}
 

@@ -12,7 +12,6 @@ import Burger from '../atoms/Burger';
 // Exported Component
 const Header = () => {
 	const [open, setOpen] = useState(false);
-	console.log(open);
 	return (
 		<Container>
 			<Logo src={logo} alt='logo' />
@@ -44,13 +43,14 @@ const Logo = styled.img`
 `;
 
 const Nav = styled.nav`
-	display: flex;
+	display: ${({ open }) => (open ? 'flex' : 'none')};
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 	background-color: ${defaultTheme.primaryColor};
 	transition: all 0.2s linear;
 	position: absolute;
+	z-index: 100;
 	top: 100px;
 	right: 0;
 	opacity: ${({ open }) => (open ? '1' : '0')};
@@ -85,4 +85,5 @@ const LinkS = styled(Link)`
 		padding: 0 3rem;
 	}
 `;
+
 export default Header;
