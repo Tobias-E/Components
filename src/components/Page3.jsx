@@ -8,6 +8,7 @@ const Page3 = () => {
 	return (
 		<Section>
 			<h1>Page3</h1>
+			<h2>Email subscribe</h2>
 			<Form />
 		</Section>
 	);

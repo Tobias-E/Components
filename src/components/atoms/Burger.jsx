@@ -41,7 +41,7 @@ const Wrapper = styled.button`
 		height: 5px;
 		position: relative;
 		transform-origin: 1px;
-		background: ${defaultTheme.primaryColorhover};
+		background: ${defaultTheme.secondaryColor};
 		border-radius: 5px;
 		transition: all 0.2s linear;
 
