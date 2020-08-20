@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// Components
+// Imported Components
 import { GlobalStyle } from './utils';
 import Header from './organisms/Header';
-// import { PrimaryButton } from './atoms/Buttons';
+
+// Routes
 import Page1 from './Page1';
 import Page2 from './Page2';
 import Page3 from './Page3';

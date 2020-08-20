@@ -1,17 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// Imported Components
+import Form from './molecules/Form';
+
 const Page3 = () => {
 	return (
-		<Container>
+		<Section>
 			<h1>Page3</h1>
-		</Container>
+			<Form />
+		</Section>
 	);
 };
 
-const Container = styled.section`
+const Section = styled.section`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 `;
 
 export default Page3;

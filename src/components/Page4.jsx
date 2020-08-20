@@ -3,15 +3,17 @@ import styled from 'styled-components';
 
 const Page4 = () => {
 	return (
-		<Container>
+		<Section>
 			<h1>Page4</h1>
-		</Container>
+		</Section>
 	);
 };
 
-const Container = styled.section`
+const Section = styled.section`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 `;
 
 export default Page4;
