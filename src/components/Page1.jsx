@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Flickity from 'react-flickity-component';
+import { defaultTheme } from './utils/themes';
 
 const flickityOptions = {
 	initialindex: 3,
@@ -18,16 +19,37 @@ const Page1 = () => {
 				reloadOnUpdate
 				static
 			>
-				<img src='https://placeimg.com/640/480/animals' alt='animals' />
-				<img src='https://placeimg.com/640/480/nature' alt='nature' />
-				<img
-					src='https://placeimg.com/640/480/architecture'
-					alt='architecture'
-				/>
+				<div>
+					<img
+						src='https://placeimg.com/640/480/animals'
+						alt='animals'
+					/>
+					<Heading>Img1</Heading>
+				</div>
+				<div>
+					<img
+						src='https://placeimg.com/640/480/animals'
+						alt='animals'
+					/>
+					<Heading>Img2</Heading>
+				</div>
+				<div>
+					<img
+						src='https://placeimg.com/640/480/animals'
+						alt='animals'
+					/>
+					<Heading>Img3</Heading>
+				</div>
 			</FlickityS>
 		</Section>
 	);
 };
+
+const Heading = styled.h2`
+	color: ${defaultTheme.primaryColor};
+	text-align: center;
+	margin: 0;
+`;
 
 const Section = styled.section`
 	display: flex;
@@ -67,7 +89,6 @@ const FlickityS = styled(Flickity)`
 
 	.flickity-enabled.is-draggable {
 		-webkit-tap-highlight-color: transparent;
-		tap-highlight-color: transparent;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
@@ -159,7 +180,7 @@ const FlickityS = styled(Flickity)`
 	.flickity-page-dots {
 		position: absolute;
 		width: 100%;
-		bottom: -25px;
+		bottom: -125px;
 		padding: 0;
 		margin: 0;
 		list-style: none;
