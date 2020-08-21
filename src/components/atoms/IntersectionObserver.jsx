@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useRecoilState } from 'recoil';
+import { inViewState } from '../Recoil';
 
-const IntersectionObserver = ({
-	setInView,
-	triggerOnce,
-	rootMargin,
-	children,
-}) => {
+const IntersectionObserver = ({ triggerOnce, rootMargin, children }) => {
+	const [_, setInView] = useRecoilState(inViewState);
 	const [ref, inView] = useInView({
-		triggerOnce: triggerOnce || true,
+		triggerOnce: triggerOnce,
 		threshold: 0,
-		rootMargin: rootMargin || '0px 0px -50px 0px',
+		rootMargin: rootMargin,
 	});
-	setInView(inView);
+
+	useEffect(() => {
+		setInView(inView);
+	}, [inView]);
 	return <div ref={ref}>{children}</div>;
 };
 

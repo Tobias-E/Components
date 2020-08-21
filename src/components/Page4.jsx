@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { useInView } from 'react-intersection-observer';
+import { useRecoilValue } from 'recoil';
+import { inViewState } from './Recoil';
+import IntersectionObserver from './atoms/IntersectionObserver';
 
 const Page4 = ({}) => {
-	const [ref, inView] = useInView({
-		/* triggerOnce: true, */
-		threshold: 0,
-		rootMargin: '0px 0px -50px 0px',
-	});
-
-	console.log('inView:', inView);
+	const inView = useRecoilValue(inViewState);
 	return (
 		<Section>
 			<h1>Page4</h1>
 			<Fill>Fill!</Fill>
 			<Test> Not observing this</Test>
-			<div ref={ref}>
+			<IntersectionObserver
+				triggerOnce={false}
+				rootMargin={'0px 0px -50px 0px'}
+			>
 				<Test inView={inView}>THE BIG TEST! STATUS: {`${inView}`}</Test>
-			</div>
+			</IntersectionObserver>
 		</Section>
 	);
 };
